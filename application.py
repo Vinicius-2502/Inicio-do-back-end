@@ -31,6 +31,10 @@ class CartItem(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
 
+@application.route('/')
+def init():
+    return 'API up'
+
 #Autenticação
 @login_manager.user_loader
 def load_user(user_id):
